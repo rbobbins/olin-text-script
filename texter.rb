@@ -17,6 +17,7 @@ end
 
 def send_text(recipient:)
 	client = Twilio::REST::Client.new(ENV['ACCOUNT_SID'], ENV['AUTH_TOKEN'])
+	puts "Sending text to #{recipient.first_name} (#{recipient.graduating_class})"
 	client.messages.create(
 	  from: ENV['FROM_NUMBER'],
 	  to: "#{recipient.phone_number}",
