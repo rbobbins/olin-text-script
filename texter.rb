@@ -25,7 +25,7 @@ def send_text(recipient:)
 end	
 
 def main()
-	contacts = parse_contacts(csv_filepath: 'sample-contacts.csv')
+	contacts = parse_contacts(csv_filepath: ENV['CONTACTS_LIST'])
 	contacts.each do |contact|
 		send_text(recipient: contact)
 	end
